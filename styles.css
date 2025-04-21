@@ -5,9 +5,16 @@
     font-family: 'IBM Plex Sans', sans-serif;
 }
 
+/* html {
+    scroll-behavior: smooth;
+  } */
+
+  
+
 :root {
     font-family: "Space Grotesk", 'IBM Plex Sans', sans-serif;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 
     --night: #131212ff;
     --eerie-black: #1C1C1Cff;
