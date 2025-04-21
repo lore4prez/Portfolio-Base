@@ -18,7 +18,7 @@ sendMsgBtn.addEventListener("click", () => {
 })
 
 // active navigation link on scroll
-const sections = document.querySelectorAll("section[id].content");
+const sections = document.querySelectorAll("section[id].nav-content");
 
 function scrollTracker() {
     const currentYScroll = window.scrollY;
@@ -75,4 +75,39 @@ teddyBear.addEventListener("click", () => {
         msgLine.style.width = "100%";
     }
     teddyMsg.textContent = msg;
+})
+
+// transition for the profile info after DOM loads
+window.addEventListener('DOMContentLoaded', () => {
+    const profileInfo = document.querySelector("#profile-container");
+    const about = document.querySelector("#about");
+    profileInfo.classList.remove('opacity-0', '-translate-x-20');
+    profileInfo.classList.add('opacity-100', 'translate-x-0');
+    about.classList.remove('opacity-0', '-translate-y-20');
+    about.classList.add('opacity-100', 'translate-y-0');
+});
+
+
+// animate on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    })
+})
+const hiddenElements = document.querySelectorAll(".content");
+hiddenElements.forEach((el) => observer.observe(el));
+
+
+// change animation delay of each project 
+const projects = document.querySelectorAll(".project");
+
+projects.forEach((project, index) => {
+    if (!(index === 1)) {
+        project.classList.add("delay-" + (220*index));
+    }
 })

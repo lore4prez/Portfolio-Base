@@ -14,8 +14,8 @@
 
 <body class="m-0 p-0 w-full h-full">
     <div class="flex flex-row justify-start overflow-visible w-full min-h-screen bg-[var(--brown-sugar)]">
-        <div class="profile-background bg-[var(--eerie-black)] text-[var(--platinum)] w-[420px] h-screen sticky top-0 left-0 border rounded-r-xl border-[var(--eerie-black)] shadow-[0_0_25px_rgba(0,0,0,0.8)]">
-            <div class="profile-container h-full flex flex-col items-center justify-center px-14">
+        <div id="profile-container" class="profile-background bg-[var(--eerie-black)] text-[var(--platinum)] w-[420px] h-screen sticky top-0 left-0 border rounded-r-xl border-[var(--eerie-black)] shadow-[0_0_25px_rgba(0,0,0,0.8)]  transition-all duration-700 ease-out opacity-0 -translate-x-20">
+            <div class="h-full flex flex-col items-center justify-center px-14">
                 <!-- Profile Info Section -->
                 <div class="profile-image">
                     <i data-feather="user" class="w-[100px] h-[100px] my-10"></i>
@@ -53,7 +53,7 @@
         <!-- Main content -->
         <div class="content-container w-[calc(100vw-420px)] flex flex-col mx-16 gap-10">
             <!-- About Section -->
-            <section id="about" class="content flex flex-col h-[92vh] items-center justify-center mt-10 p-4 bg-[var(--eerie-black)] text-[var(--platinum)] border rounded-2xl border-[var(--eerie-black)] shadow-[0_0_25px_rgba(0,0,0,0.8)]">
+            <section id="about" class="content nav-content flex flex-col h-[92vh] items-center justify-center mt-10 p-4 bg-[var(--eerie-black)] text-[var(--platinum)] border rounded-2xl border-[var(--eerie-black)] shadow-[0_0_25px_rgba(0,0,0,0.8)] transition-all duration-700 ease-out opacity-0 -translate-y-20">
                 <div class="w-full flex justify-center items-center gap-12 px-20 py-10">
                     <div class="flex flex-col gap-2">
                         <span class="w-36 text-3xl">About Me</span>
@@ -77,13 +77,13 @@
             <img class="h-[45px] w-[62px] mx-auto" src="./public/cat.gif" alt="cat walking">
 
             <!-- Projects Section -->
-            <section id="projects" class="content flex flex-col items-center justify-start gap-5 p-4 text-[var(--eerie-black)]">
+            <section id="projects" class="content nav-content flex flex-col items-center justify-start gap-5 p-4 text-[var(--eerie-black)]">
                 <div class="projects-header w-full flex gap-3 justify-start">
                     <h2 class="font-bold text-3xl ">Projects</h2>
                     <img class="w-10 h-auto wave" src="./public/bearPawColored.png" alt="Bear Paw">
                 </div>
                 <!-- Project -->
-                <div class="project bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out [var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
+                <div class="project content bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-out [var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)] ">
                     <video autoplay loop muted playsinline class="w-[250px] h-auto object-cover border border-2 border-[var(--eerie-black)]">
                         <source src="./public/portfolio.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -106,7 +106,7 @@
                     </div>
                 </div>
                 <!-- Project -->
-                <div class="project bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out [var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
+                <div class="project content bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out [var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
                     <video autoplay loop muted playsinline class="w-[250px] h-auto object-cover border border-2 border-[var(--eerie-black)]">
                         <source src="./public/wishlist.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -131,7 +131,7 @@
                     </div>
                 </div>
                 <!-- Project -->
-                <div class="project bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out text-[var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
+                <div class="project content bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out text-[var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
                     <video autoplay loop muted playsinline class="w-[250px] h-auto object-cover border border-2 border-[var(--eerie-black)]">
                         <source src="./public/contact-manager.mp4" type="video/mp4">
                         Your browser does not support the video tag.
@@ -155,7 +155,7 @@
                     </div>
                 </div>
                 <!-- Project -->
-                <div class="project bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out text-[var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
+                <div class="project content bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out text-[var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
                     <img class="w-[250px] h-auto object-cover border border-2 border-[var(--eerie-black)]" src="./public/cap-distillery.png" alt="No Image">
                     <div class="flex flex-col justify-between p-2">
                         <div class="flex flex-col gap-2">
@@ -176,7 +176,7 @@
                     </div>
                 </div>
                 <!-- Project -->
-                <div class="project bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out text-[var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
+                <div class="project content bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out text-[var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
                     <img class="w-[250px] h-auto object-cover border border-2 border-[var(--eerie-black)]" src="./public/card-game.gif" alt="No Image">
                     <div class="flex flex-col justify-between p-2">
                         <div class="flex flex-col gap-2">
@@ -195,7 +195,7 @@
                     </div>
                 </div>
                 <!-- Project -->
-                <div class="project bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out text-[var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
+                <div class="project content bg-[var(--transparent-brown-sugar)] hover:bg-[var(--hover-brown-sugar)] transition-all duration-300 ease-in-out text-[var(--eerie-black)] p-4 w-full h-auto flex gap-8 border rounded-2xl border-[var(--brown-sugar)] shadow-[0_0_25px_rgba(0,0,0,0.3)]">
                     <img class="w-[250px] h-auto object-cover border border-2 border-[var(--eerie-black)]" src="./public/final-result.png" alt="No Image">
                     <div class="flex flex-col justify-between p-2">
                         <div class="flex flex-col gap-2">
@@ -219,7 +219,7 @@
             <img class="h-[45px] w-[62px] mx-auto" src="./public/cat.gif" alt="cat walking">
 
             <!-- Skills Section -->
-            <section id="skills" class="content flex flex-col items-center mt-10 p-4 gap-10 bg-[var(--eerie-black)] text-[var(--platinum)] border rounded-2xl border-[var(--eerie-black)] shadow-[0_0_25px_rgba(0,0,0,0.8)]">
+            <section id="skills" class="content nav-content flex flex-col items-center mt-10 p-4 gap-10 bg-[var(--eerie-black)] text-[var(--platinum)] border rounded-2xl border-[var(--eerie-black)] shadow-[0_0_25px_rgba(0,0,0,0.8)]">
                 <div class="w-full flex flex-col gap-1">
                     <div class="skills-header flex gap-3">
                         <h2 class="font-bold text-3xl ">Skills</h2>
@@ -314,7 +314,7 @@
             <img class="h-[45px] w-[62px] mx-auto" src="./public/cat.gif" alt="cat walking">
 
             <!-- Contact Section -->
-            <section id="contact" class="content flex flex-col">
+            <section id="contact" class="content nav-content flex flex-col">
                 <div class="contact-container w-[50%] flex flex-col gap-6 p-8">
                     <div class="contact-header flex gap-3 justify-start">
                         <h2 class="font-bold text-3xl ">Contact</h2>
