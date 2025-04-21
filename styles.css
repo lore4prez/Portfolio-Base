@@ -1,6 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
+/* animation for the triangle/arrow icon above the bear's head */
+@keyframes markerUpDown {
+    0% {
+        transform: rotate(180deg) translateY(0);
+    }
+
+    50% {
+        transform: rotate(180deg) translateY(-10px);
+    }
+
+    100% {
+        transform: rotate(180deg) translateY(0);
+    }
+}
+
+.markerUpDown {
+    animation: markerUpDown 1s ease-in-out infinite alternate;
+    transition: transform 0.5s ease;
+}
+
+
+/* Animation for the bear paw */
 @keyframes wave {
     0% { transform: rotate(0deg); }
     15% { transform: rotate(14deg); }
@@ -21,15 +43,13 @@
     animation: wave 2s ease-in-out;
 }
 
-.font-ibm {
-    font-family: 'IBM Plex Sans', sans-serif;
-}
-
+/* Font from google fonts */
 :root {
     font-family: "Space Grotesk", 'IBM Plex Sans', sans-serif;
     box-sizing: border-box;
     scroll-behavior: smooth;
 
+    /* Color palette */
     --night: #131212ff;
     --eerie-black: #1C1C1Cff;
     --outer-space: #454746ff;
@@ -43,7 +63,7 @@
     --wenge: #775D59ff;
     --platinum: #E7E5E6ff;
 }
-
+/* Highlight transitions for the navbar's links and text */
 .nav-link.active .nav-line {
     width: 3rem; 
 }
@@ -52,12 +72,8 @@
     opacity: 1;
 }
 
-@media(prefers-reduced-motion) {
-    .hidden {
-        transition: none;
-    }
-}
 
+/* transition on scroll for each content */
 .content {
     opacity: 0;
     filter: blur(5px);
@@ -69,5 +85,11 @@
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
+}
+/* If a user doesnt want transitions, disable them */
+@media(prefers-reduced-motion) {
+    .content {
+        transition: none;
+    }
 }
   

@@ -50,31 +50,28 @@ const msgList = [
     "You found me!",
     "Hi, It's Me!",
     "Name's Kuma.",
+    "Not original, right?",
     "Have you found my paws yet?",
     "They'll wave at you if you do.",
     "I love honey, do you have any?",
     "None? You can go.",
     "Why are you clicking again?",
+    "See, you're shrinking me.",
     "You just can't leave me alone.",
     "Oh, It's you again.",
     "Still here?",
-    "Okay."
+    "Okay.",
+    "..."
 ];
 let currentMsg = 1;
 let len = msgList.length;
 
 teddyBear.addEventListener("click", () => {
     currentMsg += 1;
-
     let msg = msgList[(currentMsg) % len];
-    let msgLen = msg.length;
-
-    if (msgLen <= 20) {
-        msgLine.style.width = (msgLen * 15) + "px";
-    } else {
-        msgLine.style.width = "100%";
-    }
     teddyMsg.textContent = msg;
+
+    msgLine.style.width = teddyMsg.offsetWidth;
 })
 
 // transition for the profile info after DOM loads
