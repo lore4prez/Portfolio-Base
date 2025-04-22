@@ -18,27 +18,45 @@ sendMsgBtn.addEventListener("click", () => {
 })
 
 // active navigation link on scroll
-const sections = document.querySelectorAll("section[id].nav-content");
+// const sections = document.querySelectorAll("section[id].nav-content");
 
-function scrollTracker() {
-    const currentYScroll = window.scrollY;
+// function scrollTracker() {
+//     const currentYScroll = window.scrollY;
 
-    sections.forEach((section) => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const id = section.getAttribute("id");
-        const currentNavLink = document.querySelector(`.navbar a[href*="#${id}"]`);
+//     sections.forEach((section) => {
+//         const sectionHeight = section.offsetHeight;
+//         const sectionTop = section.offsetTop - 100;
+//         const id = section.getAttribute("id");
+//         const currentNavLink = document.querySelector(`.navbar a[href*="#${id}"]`);
 
-        if (currentYScroll > sectionTop && currentYScroll <= sectionTop + sectionHeight) {
-            currentNavLink.classList.add("active");
+//         if (currentYScroll > sectionTop && currentYScroll <= sectionTop + sectionHeight) {
+//             currentNavLink.classList.add("active");
+//         } else {
+//             currentNavLink.classList.remove("active");
+//         }
+//     })
+// }
+
+// window.addEventListener("scroll", scrollTracker);
+
+// active navigation link on scroll (newer than above)
+const observerNav = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        const id = entry.target.id;
+        const navLink = document.querySelector(`.nav-link[data-target="${id}"]`);
+
+        if (entry.isIntersecting) {
+            navLink.classList.add('active');
         } else {
-            currentNavLink.classList.remove("active");
+            navLink.classList.remove('active');
         }
-    })
-}
+    });
+}, {
+    threshold: 0.31
+});
 
-window.addEventListener("scroll", scrollTracker);
-
+const mainContents = document.querySelectorAll(".nav-content");
+mainContents.forEach((section) => observerNav.observe(section));
 
 // A fun little interactive game
 const teddyBear = document.querySelector("#my-teddy-bear");
@@ -51,17 +69,16 @@ const msgList = [
     "Hi, It's Me!",
     "Name's Kuma.",
     "Not original, right?",
-    "Found my paws yet?",
+    "Look for my paws.",
     "I love honey.",
     "Do you have any?",
     "None? You can go.",
     "Clicking again?",
-    "You're shrinking me.",
+    "...",
     "Leave me alone.",
     "Oh, It's you again.",
     "Still here?",
     "Okay.",
-    "..."
 ];
 let currentMsg = 1;
 let len = msgList.length;
