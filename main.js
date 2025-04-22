@@ -64,7 +64,7 @@ const teddyMsg = document.querySelector("#bear-message");
 const msgLine = document.querySelector("#bear-msg-line");
 
 const msgList = [
-    "Hello",
+    "Hello There!",
     "You found me!",
     "Hi, It's Me!",
     "Name's Kuma.",
@@ -77,8 +77,8 @@ const msgList = [
     "...",
     "Leave me alone.",
     "Oh, It's you again.",
-    "Still here?",
-    "Okay.",
+    "Still no honey?",
+    "Okay, bye.",
 ];
 let currentMsg = 1;
 let len = msgList.length;
@@ -88,9 +88,17 @@ teddyBear.addEventListener("click", () => {
     let msg = msgList[(currentMsg) % len];
     teddyMsg.textContent = msg;
 
-    msgLine.style.width = teddyMsg.offsetWidth;
+    msgLine.style.width = teddyMsg.offsetWidth + "px";
 
 })
+
+// To have the line underneath about me to match its size, as well as the first Hello Msg in about page 
+const aboutMeTextEl = document.querySelector("#about-me");
+const aboutMeLineEl = document.querySelector("#about-me-line");
+window.addEventListener("DOMContentLoaded", () => {
+    msgLine.style.width = teddyMsg.offsetWidth + "px";
+    aboutMeLineEl.style.width = aboutMeTextEl.offsetWidth + "px";
+});
 
 // transition for the profile info after DOM loads
 window.addEventListener('DOMContentLoaded', () => {
