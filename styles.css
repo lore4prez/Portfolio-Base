@@ -84,7 +84,7 @@
 }
 /* Highlight transitions for the navbar's links and text */
 .nav-link.active .nav-line {
-    width: 3rem; 
+    width: 3.4rem; 
 }
 
 .nav-link.active .nav-text {
