@@ -69,7 +69,7 @@ const msgList = [
     "Hi, It's Me!",
     "Name's Kuma.",
     "Not original, right?",
-    "Look for my paws.",
+    "Found my paws?",
     "I love honey.",
     "Do you have any?",
     "None? You can go.",
